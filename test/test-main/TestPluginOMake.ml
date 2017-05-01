@@ -155,12 +155,20 @@ let all_tests =
        try_installed_library test_ctxt t "liba" ["Liba"];
     );
 
+<<<<<<< HEAD
     "bug1747",
+=======
+    "github105",
+>>>>>>> gs-omake-9
     (fun test_ctxt t ->
        oasis_setup test_ctxt t;
        register_generated_files t
          (oasis_omake_files
+<<<<<<< HEAD
             ["liba" ]);
+=======
+            ["liba"; "libb" ]);
+>>>>>>> gs-omake-9
        register_installed_files test_ctxt t
          [
            InstalledBin ["t"];
@@ -170,6 +178,10 @@ let all_tests =
        (* Try the result. *)
        try_installed_exec test_ctxt t "t" [];
     );
+<<<<<<< HEAD
+=======
+
+>>>>>>> gs-omake-9
   ]
 
 let gen_test (nm, f) =
@@ -219,6 +231,7 @@ let tests =
            generate ["simplelib"; "_oasis"];
            generate ["bug1736"; "_oasis"];
            generate ["bug1747"; "_oasis"];
+           generate ["github105"; "_oasis"];
            generate ~want_error:true ["noocamlversion.oasis"];
            generate ~want_error:true ["ocamlversion312.oasis"];
            generate ["ocamlversion401.oasis"];
